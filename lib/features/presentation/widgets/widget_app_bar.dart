@@ -1,72 +1,58 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon/config/flavor_config.dart';
+
 import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/features/presentation/widgets/widget_helper.dart';
+import 'package:pokemon/core/util/styles/text.dart';
 
-/// Widget ini berfungsi sebagai custom AppBar yang digunakan pada aplikasi<br />
-///
-/// [titleText] - judul dari AppBar<br />
-/// [leading] - widget pada bagian paling kiri dari AppBar, sebelum title <br />
-/// [backgroundColor] warna latar belakang dari AppBar <br />
-/// [iconTheme] theme dari icon pada AppBar <br />
-/// [automaticallyImplyLeading] otomatis menambah default leading atau tidak <br />
-/// [centerTitle] menengahkan judul atau tidak <br />
-/// [elevation] elevation dari AppBar <br />
-/// [bottom] widget dibawah AppBar <br />
-/// [actions] Widget tambahan di sebalah kanan AppBar <br />
 class WidgetAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final Widget? title;
-  final String? titleText;
-  final Widget? leading;
-  final Color? backgroundColor;
-  final IconThemeData? iconTheme;
-  final bool automaticallyImplyLeading;
-  final bool? centerTitle;
-  final double? titleSpacing;
-  final double? elevation;
-  final PreferredSizeWidget? bottom;
-  final List<Widget>? actions;
-
-  WidgetAppBar({
+  const WidgetAppBar({
     super.key,
-    this.title,
-    this.titleText,
-    this.actions,
-    this.leading,
-    this.backgroundColor,
-    this.iconTheme,
-    this.automaticallyImplyLeading = true,
-    this.centerTitle,
-    this.titleSpacing,
-    this.elevation = 0.0,
-    this.bottom,
   });
 
-  final widgetHelper = WidgetHelper();
-
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight + (bottom?.preferredSize.height ?? 0.0));
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   @override
   Widget build(BuildContext context) {
-    final listActionsAppBar = <Widget>[];
-    if (actions != null) {
-      listActionsAppBar.addAll(actions!);
-    }
     return AppBar(
-      title: title ?? Text(titleText ?? ''),
-      automaticallyImplyLeading: automaticallyImplyLeading,
-      leading: leading,
-      centerTitle: centerTitle,
-      titleSpacing: titleSpacing ?? 10,
-      iconTheme: iconTheme ??
-          const IconThemeData(
-            color: BaseColor.secondaryColor,
+      backgroundColor: Colors.white,
+      elevation: 0,
+      title: RichText(
+        text: TextSpan(
+          text: 'In',
+          style: BaseTextStyle.textThemeBackup.titleLarge?.copyWith(
+            color: BaseColor.materialcolorBrand.shade600,
+            fontWeight: FontWeight.bold,
           ),
-      backgroundColor: backgroundColor ?? FlavorConfig.instance?.colorAccent,
-      actions: listActionsAppBar,
-      elevation: elevation,
-      bottom: bottom,
+          children: <TextSpan>[
+            TextSpan(
+              text: 'AI',
+              style: BaseTextStyle.textThemeBackup.titleLarge?.copyWith(
+                color: BaseColor.materialcolorGray.shade600,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
+      leading: Padding(
+        padding: EdgeInsets.only(left: 16.0),
+        child: CircleAvatar(
+          backgroundImage: NetworkImage(
+              'https://cdn.pixabay.com/photo/2021/04/25/14/30/man-6206540_960_720.jpg'),
+        ),
+      ),
+      actions: [
+        Padding(
+          padding: EdgeInsets.only(right: 8.0),
+          child: IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.menu_rounded,
+              color: BaseColor.materialcolorGray.shade600,
+            ),
+          ),
+        )
+      ],
     );
   }
 }

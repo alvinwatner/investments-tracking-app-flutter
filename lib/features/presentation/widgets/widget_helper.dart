@@ -13,7 +13,7 @@ class WidgetHelper {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(message),
-        backgroundColor: BaseColor.successColor,
+        backgroundColor: BaseColor.materialcolorBlue.shade200,
         behavior: SnackBarBehavior.floating,
         margin: const EdgeInsets.all(20),
       ),
@@ -24,7 +24,7 @@ class WidgetHelper {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(message),
-        backgroundColor: BaseColor.errorColor,
+        backgroundColor: BaseColor.materialcolorBlue.shade200,
         behavior: SnackBarBehavior.floating,
         margin: const EdgeInsets.all(20),
       ),
@@ -45,7 +45,8 @@ class WidgetHelper {
         ..add(
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: Text(labelNegativeButton?.toUpperCase() ?? 'back'.tr().toUpperCase()),
+            child: Text(labelNegativeButton?.toUpperCase() ??
+                'back'.tr().toUpperCase()),
           ),
         )
         ..add(
@@ -72,7 +73,8 @@ class WidgetHelper {
       actionsAlertDialog.add(
         TextButton(
           onPressed: () => Navigator.pop(context, false),
-          child: Text(labelNegativeButton?.toUpperCase() ?? 'back'.tr().toUpperCase()),
+          child: Text(
+              labelNegativeButton?.toUpperCase() ?? 'back'.tr().toUpperCase()),
         ),
       );
       actionsCupertinoDialog.add(
@@ -96,6 +98,7 @@ class WidgetHelper {
     );
   }
 
-  ScrollPhysics? adaptiveScrollPhysics() =>
-      Platform.isIOS ? const BouncingScrollPhysics() : const ClampingScrollPhysics();
+  ScrollPhysics? adaptiveScrollPhysics() => Platform.isIOS
+      ? const BouncingScrollPhysics()
+      : const ClampingScrollPhysics();
 }

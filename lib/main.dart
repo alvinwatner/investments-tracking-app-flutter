@@ -23,15 +23,16 @@ void main() async {
 
     FlavorConfig(
       flavor: Flavor.PRODUCTION,
-      colorPrimary: BaseColor.materialcolor,
-      colorAccent: BaseColor.materialcolorAccent,
+      colorPrimary: BaseColor.materialcolorGray,
+      colorAccent: BaseColor.materialcolorBlue,
       values: FlavorValues(
         baseUrlRootWeb: BaseUrlConfig.baseUrlRootEndpoint,
         baseUrlEndpoint: baseUrlEndpoint,
       ),
     );
 
-    await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then(
+    await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+        .then(
       (_) => runApp(
         EasyLocalization(
           supportedLocales: const [Locale('id', 'ID')],

@@ -20,7 +20,7 @@ class WidgetCenterTryAgain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var isConnectionError = message == 'connection_error'.tr();
-    var backgroundColorButton = BaseColor.primary500;
+    var backgroundColorButton = BaseColor.materialcolorBlue.shade200;
     return Center(
       child: Padding(
         padding: EdgeInsets.all(16),

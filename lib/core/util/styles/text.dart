@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class BaseTextStyle {
   /// Guideline typografi berdasarkan Material Design type system
   /// https://material.io/design/typography/the-type-system.html#type-scale
-  static final TextTheme textThemeBak = TextTheme(
+  static final TextTheme textThemeBackup = TextTheme(
     displayLarge: TextStyle(
       fontSize: 96,
       fontWeight: FontWeight.w300,
@@ -23,7 +23,7 @@ class BaseTextStyle {
       letterSpacing: 0.0,
     ),
     headlineMedium: TextStyle(
-      fontSize: 34,
+      fontSize: 30,
       fontWeight: FontWeight.w400,
       letterSpacing: 0.25,
       height: 1.18,
