@@ -3,18 +3,18 @@ import 'package:gap/gap.dart';
 
 import 'package:pokemon/core/util/styles/colors.dart';
 import 'package:pokemon/core/util/styles/text.dart';
+import 'package:pokemon/features/presentation/pages/portfolio_dashboard_page.dart';
 import 'package:pokemon/features/presentation/widgets/widget_gross_income_card.dart';
-import 'package:pokemon/features/presentation/widgets/widget_net_assets_card.dart';
-import 'package:pokemon/features/presentation/widgets/widget_tab_portfolio_performance.dart';
 
 import '../../../core/util/sources/images.dart';
-import '../widgets/widget_add_tab_menu.dart';
 import '../widgets/widget_app_bar.dart';
 import '../widgets/widget_ask_ai_button.dart';
+import '../widgets/widget_assets_types_tab.dart';
 import '../widgets/widget_chip_trending.dart';
 import '../widgets/widget_custom_button.dart';
-import '../widgets/widget_portfolio_performance_item.dart';
+import '../widgets/widget_custom_expandable_tile.dart';
 import '../widgets/widget_tab_countries.dart';
+import '../widgets/widget_time_filter_tab.dart';
 
 class AssetBalancesPage extends StatefulWidget {
   static const routeName = 'asset-balances';
@@ -34,28 +34,12 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Portfolio Dashboard',
-                  style: BaseTextStyle.textThemeBackup.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.w800,
-                    color: BaseColor.materialcolorGray.shade800,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2.0),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.search,
-                      size: 32,
-                      color: BaseColor.materialcolorGray.shade600,
-                    ),
-                  ),
-                ),
-              ],
+            Text(
+              'Asset balances',
+              style: BaseTextStyle.textThemeBackup.headlineSmall?.copyWith(
+                fontWeight: FontWeight.w800,
+                color: BaseColor.materialcolorGray.shade800,
+              ),
             ),
             Gap(16.0),
             AskAIButton(
@@ -66,72 +50,173 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
               onSelectedIndex: (index) {},
             ),
             Gap(16.0),
-            WidgetNetAssetsCard(),
-            Gap(16.0),
-            WidgetsAddTabMenu(),
-            Gap(16.0),
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: Text(
-                'Portfolio performance',
-                style: BaseTextStyle.textThemeBackup.titleLarge?.copyWith(
-                  color: BaseColor.materialcolorGray.shade600,
-                  fontWeight: FontWeight.w800,
-                  fontSize: 18,
+            WidgetIncomeOutlinedCard(children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Net asset',
+                    style: BaseTextStyle.textThemeBackup.titleMedium?.copyWith(
+                      color: BaseColor.materialcolorGray.shade600,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacementNamed(
+                        context,
+                        PortfolioDashboardPage.routeName,
+                      );
+                    },
+                    child: Icon(
+                      Icons.more_vert_rounded,
+                      color: BaseColor.materialcolorGray.shade300,
+                    ),
+                  ),
+                ],
+              ),
+              Gap(12.0),
+              Text(
+                '\$74,769,618',
+                style: BaseTextStyle.textThemeBackup.headlineMedium?.copyWith(
+                  color: BaseColor.materialcolorGray.shade800,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
+              Gap(8.0),
+              Row(
+                children: [
+                  Text(
+                    'Returns: ',
+                    style: BaseTextStyle.textThemeBackup.titleMedium?.copyWith(
+                      color: Colors.black,
+                      fontSize: 18,
+                    ),
+                  ),
+                  Gap(4.0),
+                  Text(
+                    '+\$3,285,372',
+                    style: BaseTextStyle.textThemeBackup.titleMedium?.copyWith(
+                      color: BaseColor.materialcolorSuccess,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 18,
+                    ),
+                  ),
+                  Gap(4.0),
+                  WidgetChipTrending('4.6'),
+                ],
+              ),
+              Gap(
+                12.0,
+              ),
+              RichText(
+                text: TextSpan(
+                  text: 'Release gains: ',
+                  style: BaseTextStyle.textThemeBackup.titleMedium?.copyWith(
+                    color: Colors.black,
+                  ),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: '\$78,789,618',
+                      style:
+                          BaseTextStyle.textThemeBackup.titleMedium?.copyWith(
+                        color: BaseColor.materialcolorSuccess.shade700,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Gap(12.0),
+              RichText(
+                text: TextSpan(
+                  text: 'Unreleased gains: ',
+                  style: BaseTextStyle.textThemeBackup.titleMedium?.copyWith(
+                    color: Colors.black,
+                  ),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: '\$2,066,372',
+                      style:
+                          BaseTextStyle.textThemeBackup.titleMedium?.copyWith(
+                        color: BaseColor.materialcolorSuccess.shade700,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Gap(14.0),
+              WidgetTimeFilterTab(
+                onTap: (int index) {},
+              ),
+            ]),
+            Gap(16.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Group by:',
+                  style: BaseTextStyle.textThemeBackup.titleSmall?.copyWith(
+                    color: BaseColor.materialcolorGray.shade600,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                WidgetAssetsTypesTab(
+                  onSelectedIndex: (int? index) {},
+                ),
+              ],
             ),
             Gap(16.0),
-            WidgetTabPortfolioPerformances(
-              onSelectedIndex: (int? index) {},
+            WidgetCustomExpandableTile(
+              isExpanded: true,
+              color: BaseColor.materialcolorCyan.shade500,
+              trailingColor: BaseColor.materialcolorCyan.shade500,
+              title: 'Bank accounts',
+              trailing: '\$8,903,000',
             ),
-            // Gap(16.0),
-            WidgetPortfolioPerformanceItem(
-              title: 'Month',
-              actions: [
-                Text(
-                  '+\$401,321',
-                  style: BaseTextStyle.textThemeBackup.bodyMedium?.copyWith(
-                    color: BaseColor.materialcolorGray.shade700,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-                Gap(8),
-                WidgetChipTrending('0.5'),
-              ],
+            Gap(16.0),
+            WidgetCustomExpandableTile(
+              color: BaseColor.materialcolorOrange.shade500,
+              trailingColor: BaseColor.materialcolorOrange.shade600,
+              title: 'Managed funds',
+              trailing: '\$12,427,264',
             ),
-            WidgetPortfolioPerformanceItem(
-              title: 'Quarter',
-              actions: [
-                Text(
-                  '+\$814,603',
-                  style: BaseTextStyle.textThemeBackup.bodyMedium?.copyWith(
-                    color: BaseColor.materialcolorGray.shade700,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-                Gap(8),
-                WidgetChipTrending('1.1'),
-              ],
+            Gap(16.0),
+            WidgetCustomExpandableTile(
+              color: BaseColor.materialcolorWarning.shade300,
+              trailingColor: BaseColor.materialcolorWarning.shade500,
+              title: 'Listed shares',
+              trailing: '\$8,903,000',
             ),
-            WidgetPortfolioPerformanceItem(
-              isLastItem: true,
-              title: 'FY 2024',
-              actions: [
-                Text(
-                  '+\$3,285,372',
-                  style: BaseTextStyle.textThemeBackup.bodyMedium?.copyWith(
-                    color: BaseColor.materialcolorGray.shade700,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-                Gap(8),
-                WidgetChipTrending('4.6'),
-              ],
+            Gap(16.0),
+            WidgetCustomExpandableTile(
+              color: BaseColor.materialcolorGray.shade500,
+              trailingColor: BaseColor.materialcolorGray.shade600,
+              title: 'Unlisted shares',
+              trailing: '\$8,903,000',
             ),
-            Gap(16),
-            WidgetGrossIncomeCard(),
-            Gap(16),
+            Gap(16.0),
+            WidgetCustomExpandableTile(
+              color: BaseColor.materialcolorOrange.shade300,
+              trailingColor: BaseColor.materialcolorOrange.shade500,
+              title: 'Private equity',
+              trailing: '\$8,903,000',
+            ),
+            Gap(16.0),
+            WidgetCustomExpandableTile(
+              color: BaseColor.materialcolorGray.shade400,
+              trailingColor: BaseColor.materialcolorGray.shade600,
+              title: 'Fixed income',
+              trailing: '\$8,903,000',
+            ),
+            Gap(16.0),
+            WidgetCustomExpandableTile(
+              color: BaseColor.materialcolorTeal.shade500,
+              trailingColor: BaseColor.materialcolorTeal.shade600,
+              title: 'Private property',
+              trailing: '\$8,903,000',
+            ),
             Text(
               'AI suggested queries',
               style: BaseTextStyle.textThemeBackup.bodyLarge?.copyWith(
@@ -163,7 +248,6 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                 title: 'Liquid assets per account?',
               ),
             ),
-
             Gap(16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -175,32 +259,6 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                 ),
                 title: 'What are current portfolio risks?',
               ),
-            ),
-
-            Gap(16),
-            Divider(),
-            Gap(16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                WidgetCustomButton(
-                  onPressed: () {},
-                  leading: Icon(
-                    Icons.tune_outlined,
-                    color: BaseColor.materialcolorGray.shade600,
-                  ),
-                  title: 'Customise',
-                ),
-                Gap(10),
-                WidgetCustomButton(
-                  onPressed: () {},
-                  leading: Icon(
-                    Icons.cloud_upload_outlined,
-                    color: BaseColor.materialcolorGray.shade600,
-                  ),
-                  title: 'Add Widget',
-                ),
-              ],
             ),
             Gap(60),
           ],

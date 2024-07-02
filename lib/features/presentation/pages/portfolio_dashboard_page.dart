@@ -15,6 +15,7 @@ import '../widgets/widget_chip_trending.dart';
 import '../widgets/widget_custom_button.dart';
 import '../widgets/widget_portfolio_performance_item.dart';
 import '../widgets/widget_tab_countries.dart';
+import '../widgets/widget_time_filter_tab.dart';
 
 class PortfolioDashboardPage extends StatefulWidget {
   static const routeName = 'portfolio-dashbaord';
@@ -130,7 +131,130 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
               ],
             ),
             Gap(16),
-            WidgetGrossIncomeCard(),
+            WidgetIncomeOutlinedCard(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Gross income',
+                      style:
+                          BaseTextStyle.textThemeBackup.titleMedium?.copyWith(
+                        color: BaseColor.materialcolorGray.shade600,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    Icon(
+                      Icons.more_vert_rounded,
+                      color: BaseColor.materialcolorGray.shade300,
+                    ),
+                  ],
+                ),
+                Gap(12.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '\$74,769,618',
+                          style: BaseTextStyle.textThemeBackup.headlineMedium
+                              ?.copyWith(
+                            color: BaseColor.materialcolorGray.shade800,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Gap(8.0),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.trending_up_rounded,
+                              color: BaseColor.materialcolorSuccess,
+                              size: 19,
+                            ),
+                            Gap(2.0),
+                            Text(
+                              '+4.4%',
+                              style: BaseTextStyle.textThemeBackup.bodySmall
+                                  ?.copyWith(
+                                color: BaseColor.materialcolorSuccess,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            Gap(10.0),
+                            Text(
+                              'vs last day',
+                              style: BaseTextStyle.textThemeBackup.bodySmall
+                                  ?.copyWith(
+                                color: BaseColor.materialcolorGray.shade600,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(1234)),
+                        color: BaseColor.materialcolorBrand.shade50,
+                      ),
+                      child: Icon(
+                        Icons.keyboard_arrow_right_rounded,
+                        color: BaseColor.materialcolorGray.shade600,
+                        size: 36,
+                      ),
+                    )
+                  ],
+                ),
+                Gap(
+                  12.0,
+                ),
+                RichText(
+                  text: TextSpan(
+                    text: 'Less expenses: ',
+                    style: BaseTextStyle.textThemeBackup.titleMedium?.copyWith(
+                      color: Colors.black,
+                    ),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: '\$78,789,618',
+                        style:
+                            BaseTextStyle.textThemeBackup.titleMedium?.copyWith(
+                          color: BaseColor.materialcolorDestructive.shade900,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Gap(12.0),
+                RichText(
+                  text: TextSpan(
+                    text: 'Net income: ',
+                    style: BaseTextStyle.textThemeBackup.titleMedium?.copyWith(
+                      color: Colors.black,
+                    ),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: '\$4,020,000',
+                        style:
+                            BaseTextStyle.textThemeBackup.titleMedium?.copyWith(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Gap(14.0),
+                WidgetTimeFilterTab(
+                  onTap: (int index) {},
+                ),
+              ],
+            ),
             Gap(16),
             Text(
               'AI suggested queries',
@@ -163,7 +287,6 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                 title: 'Liquid assets per account?',
               ),
             ),
-
             Gap(16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
