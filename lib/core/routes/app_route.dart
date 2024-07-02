@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:pokemon/features/presentation/pages/asset_balances_page.dart';
 import 'package:pokemon/features/presentation/pages/portfolio_dashboard_page.dart';
 
 class AppRoute {
@@ -10,7 +11,11 @@ class AppRoute {
           settings: settings,
           builder: (_) => const PortfolioDashboardPage(),
         );
-
+      case AssetBalancesPage.routeName:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => const AssetBalancesPage(),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

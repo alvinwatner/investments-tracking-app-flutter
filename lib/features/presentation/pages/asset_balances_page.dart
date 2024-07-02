@@ -16,15 +16,15 @@ import '../widgets/widget_custom_button.dart';
 import '../widgets/widget_portfolio_performance_item.dart';
 import '../widgets/widget_tab_countries.dart';
 
-class PortfolioDashboardPage extends StatefulWidget {
-  static const routeName = 'portfolio-dashbaord';
-  const PortfolioDashboardPage({super.key});
+class AssetBalancesPage extends StatefulWidget {
+  static const routeName = 'asset-balances';
+  const AssetBalancesPage({super.key});
 
   @override
-  State<PortfolioDashboardPage> createState() => _PortfolioDashboardPageState();
+  State<AssetBalancesPage> createState() => _AssetBalancesPageState();
 }
 
-class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
+class _AssetBalancesPageState extends State<AssetBalancesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

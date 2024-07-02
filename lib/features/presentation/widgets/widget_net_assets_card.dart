@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 
 import 'package:pokemon/core/util/styles/colors.dart';
 import 'package:pokemon/core/util/styles/text.dart';
+import 'package:pokemon/features/presentation/pages/asset_balances_page.dart';
 import '../widgets/widget_chip_trending.dart';
 
 class WidgetNetAssetsCard extends StatelessWidget {
@@ -79,10 +80,16 @@ class WidgetNetAssetsCard extends StatelessWidget {
                   )
                 ],
               ),
-              Icon(
-                Icons.keyboard_arrow_right_rounded,
-                color: Colors.white,
-                size: 36,
+              IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, AssetBalancesPage.routeName);
+                },
+                padding: EdgeInsets.zero,
+                icon: Icon(
+                  Icons.keyboard_arrow_right_rounded,
+                  color: Colors.white,
+                  size: 36,
+                ),
               )
             ],
           ),

@@ -137,7 +137,7 @@ class WidgetGrossIncomeCard extends StatelessWidget {
               ],
             ),
           ),
-          Gap(8.0),
+          Gap(14.0),
           DefaultTabController(
             initialIndex: 1,
             length: 4,
