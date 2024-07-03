@@ -3,6 +3,9 @@
 
 In this technical test, I demonstrated a broad landscape of frontend skills ranging from Web and web-mobile to Android & iOS mobile applications. I believe I would be a valuable asset to Packform, allowing the company to focus more on business aspects.
 
+## Demo
+
+<img src="https://github.com/anggiedwarsa/pokemon/assets/58515206/53f0bf0b-e331-4945-9fce-9a2ed2c8cbee.gif" width="250" height="500"/>
 
 ## Packform Technical Test (Flutter)
 
@@ -27,7 +30,4 @@ Steps:
 * figma : [link](https://www.figma.com/design/IqZB4R29x3E9QBVtvxVuOC/Frontend-test-task?node-id=4271-13379&t=AdHZKEBQm3PjxiRA-1)
 * APK : [link](https://drive.google.com/drive/folders/1u4P0e-RdNEEtSoJeOVLtedP4wGEVivma?usp=sharing)
 
-## Demo
-
-<img src="https://github.com/anggiedwarsa/pokemon/assets/58515206/53f0bf0b-e331-4945-9fce-9a2ed2c8cbee.gif" width="250" height="500"/>
 
