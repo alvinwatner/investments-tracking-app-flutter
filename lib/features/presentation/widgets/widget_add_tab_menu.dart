@@ -64,7 +64,7 @@ class _CustomChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChoiceChip(
       showCheckmark: false,
-      labelPadding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 20.0),
+      labelPadding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 15.0),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(1234),
         side: BorderSide(

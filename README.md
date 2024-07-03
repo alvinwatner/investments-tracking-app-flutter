@@ -1,16 +1,24 @@
-# in_ai
+# Packform Technical Test (Flutter)
 
-A new Flutter project.
+In this technical test, I demonstrated a broad landscape of frontend skills ranging from Web and web-mobile to Android & iOS mobile applications. I believe I would be a valuable asset to Packform, allowing the company to focus more on business aspects.
 
-## Getting Started
+In this particular repository, I showcased my Flutter technical skills with scalability and maintainability in mind, highlighting the following aspects:
 
-This project is a starting point for a Flutter application.
+1. The usage of Bloc for state management.
+2. The implementation of Clean Architecture as proposed by Robert C. Martin.
+3. The ability to adjust to different technical environments.
+4. Knowledge of clean coding principles.
+5. Best practices in UI/UX implementation, including configuring the color scheme and text theme, and utilizing a variety of Flutter widgets such as Chips, ChoiceChips, TabBars, and the newest widget, Gap.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Installation :
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Steps:
+
+* `flutter pub get`
+* `flutter pub run build_runner build`
+* `flutter run`
+
+## Additional Link :
+* figma : [link](https://www.figma.com/design/IqZB4R29x3E9QBVtvxVuOC/Frontend-test-task?node-id=4271-13379&t=AdHZKEBQm3PjxiRA-1)
+* APK : [link](https://drive.google.com/drive/folders/1u4P0e-RdNEEtSoJeOVLtedP4wGEVivma?usp=sharing)
