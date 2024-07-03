@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 enum Flavor {
-  DEVELOPMENT,
-  PRODUCTION,
-  KUBERNETES,
+  development,
+  production,
+  kubernetes,
 }
 
 class FlavorValues {
@@ -66,7 +66,7 @@ class FlavorConfig {
     return paths[paths.length - 1];
   }
 
-  static bool isProduction() => _instance?.flavor == Flavor.PRODUCTION;
+  static bool isProduction() => _instance?.flavor == Flavor.production;
 
-  static bool isDevelopment() => _instance?.flavor == Flavor.DEVELOPMENT;
+  static bool isDevelopment() => _instance?.flavor == Flavor.development;
 }

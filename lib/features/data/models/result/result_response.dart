@@ -14,7 +14,7 @@ class ResultResponse extends Equatable {
   @JsonKey(name: 'data')
   final ResultData? data;
 
-  ResultResponse({
+  const ResultResponse({
     this.category,
     this.value,
     this.data,
@@ -49,7 +49,7 @@ class ResultData extends Equatable {
   @JsonKey(name: 'sub_data')
   final List<ResultSubData>? subData;
 
-  ResultData({this.name, this.value, this.subData});
+  const ResultData({this.name, this.value, this.subData});
 
   static ResultData fromJson(Map<String, dynamic> json) =>
       _$ResultDataFromJson(json);
@@ -78,7 +78,7 @@ class ResultSubData extends Equatable {
   @JsonKey(name: 'value')
   final String? value;
 
-  ResultSubData({
+  const ResultSubData({
     this.name,
     this.value,
   });

@@ -10,7 +10,7 @@ class WidgetPrimaryButton extends StatelessWidget {
   final BorderSide borderSide;
   final double borderRadius;
 
-  WidgetPrimaryButton({
+  const WidgetPrimaryButton({super.key, 
     required this.onPressed,
     required this.child,
     this.textColor,

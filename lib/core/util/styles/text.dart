@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class BaseTextStyle {
   /// Guideline typografi berdasarkan Material Design type system
   /// https://material.io/design/typography/the-type-system.html#type-scale
-  static final TextTheme textThemeBackup = TextTheme(
+  static const TextTheme textThemeBackup = TextTheme(
     displayLarge: TextStyle(
       fontSize: 96,
       fontWeight: FontWeight.w300,
@@ -84,7 +84,7 @@ class BaseTextStyle {
     ),
   );
 
-  static final TextStyle overline2 = const TextStyle(
+  static const TextStyle overline2 = TextStyle(
     fontSize: 10,
     color: Color(0xFF65707B),
     fontWeight: FontWeight.w400,
@@ -93,17 +93,17 @@ class BaseTextStyle {
   );
 
   static final shadow1 = <Shadow>[
-    Shadow(
+    const Shadow(
       offset: Offset(2.0, 2.0),
       blurRadius: 8.0,
       color: Colors.black,
     ),
-    Shadow(
+    const Shadow(
       offset: Offset(-2.0, 2.0),
       blurRadius: 13.0,
       color: Colors.black,
     ),
-    Shadow(
+    const Shadow(
       offset: Offset(0.0, -2.0),
       blurRadius: 13.0,
       color: Colors.black,

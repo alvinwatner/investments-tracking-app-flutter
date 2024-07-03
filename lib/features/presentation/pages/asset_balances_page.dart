@@ -1,15 +1,14 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 
-import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/core/util/styles/text.dart';
-import 'package:pokemon/features/presentation/bloc/balances/balances_bloc.dart';
-import 'package:pokemon/features/presentation/pages/portfolio_dashboard_page.dart';
-import 'package:pokemon/features/presentation/widgets/widget_gross_income_card.dart';
-import 'package:pokemon/features/presentation/widgets/widget_loading_center.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
+import 'package:in_ai/core/util/styles/text.dart';
+import 'package:in_ai/features/presentation/bloc/balances/balances_bloc.dart';
+import 'package:in_ai/features/presentation/pages/portfolio_dashboard_page.dart';
+import 'package:in_ai/features/presentation/widgets/widget_gross_income_card.dart';
+import 'package:in_ai/features/presentation/widgets/widget_loading_center.dart';
 
 import '../../../core/util/sources/images.dart';
 import '../../../injection_container.dart';
@@ -45,9 +44,9 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
     return BlocProvider(
       create: (context) => _balancesBloc,
       child: Scaffold(
-        appBar: WidgetAppBar(),
+        appBar: const WidgetAppBar(),
         body: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 12, vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -58,15 +57,15 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                   color: BaseColor.materialcolorGray.shade800,
                 ),
               ),
-              Gap(16.0),
+              const Gap(16.0),
               AskAIButton(
                 onPressed: () {},
               ),
-              Gap(16.0),
+              const Gap(16.0),
               WidgetTabCountries(
                 onSelectedIndex: (index) {},
               ),
-              Gap(16.0),
+              const Gap(16.0),
               WidgetIncomeOutlinedCard(children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -93,7 +92,7 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                     ),
                   ],
                 ),
-                Gap(12.0),
+                const Gap(12.0),
                 Text(
                   '\$74,769,618',
                   style: BaseTextStyle.textThemeBackup.headlineMedium?.copyWith(
@@ -101,7 +100,7 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Gap(8.0),
+                const Gap(8.0),
                 Row(
                   children: [
                     Text(
@@ -112,7 +111,7 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                         fontSize: 18,
                       ),
                     ),
-                    Gap(4.0),
+                    const Gap(4.0),
                     Text(
                       '+\$3,285,372',
                       style:
@@ -122,11 +121,11 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                         fontSize: 18,
                       ),
                     ),
-                    Gap(4.0),
-                    WidgetChipTrending('4.6'),
+                    const Gap(4.0),
+                    const WidgetChipTrending('4.6'),
                   ],
                 ),
-                Gap(
+                const Gap(
                   12.0,
                 ),
                 RichText(
@@ -147,7 +146,7 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                     ],
                   ),
                 ),
-                Gap(12.0),
+                const Gap(12.0),
                 RichText(
                   text: TextSpan(
                     text: 'Unreleased gains: ',
@@ -166,12 +165,12 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                     ],
                   ),
                 ),
-                Gap(14.0),
+                const Gap(14.0),
                 WidgetTimeFilterTab(
                   onTap: (int index) {},
                 ),
               ]),
-              Gap(16.0),
+              const Gap(16.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -187,11 +186,11 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                   ),
                 ],
               ),
-              Gap(16.0),
+              const Gap(16.0),
               BlocBuilder<BalancesBloc, BalancesState>(
                 builder: (context, state) {
                   if (state is BalancesLoadInProgress) {
-                    return WidgetLoadingCenter();
+                    return const WidgetLoadingCenter();
                   }
                   if (state is BalancesLoadSuccess) {
                     return Column(
@@ -205,45 +204,45 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                       ],
                     );
                   }
-                  return SizedBox.shrink();
+                  return const SizedBox.shrink();
                 },
               ),
-              Gap(16.0),
+              const Gap(16.0),
               WidgetCustomExpandableTileDummy(
                 color: BaseColor.materialcolorOrange.shade500,
                 trailingColor: BaseColor.materialcolorOrange.shade600,
                 title: 'Managed funds',
                 trailing: '\$12,427,264',
               ),
-              Gap(16.0),
+              const Gap(16.0),
               WidgetCustomExpandableTileDummy(
                 color: BaseColor.materialcolorWarning.shade300,
                 trailingColor: BaseColor.materialcolorWarning.shade500,
                 title: 'Listed shares',
                 trailing: '\$8,903,000',
               ),
-              Gap(16.0),
+              const Gap(16.0),
               WidgetCustomExpandableTileDummy(
                 color: BaseColor.materialcolorGray.shade500,
                 trailingColor: BaseColor.materialcolorGray.shade600,
                 title: 'Unlisted shares',
                 trailing: '\$8,903,000',
               ),
-              Gap(16.0),
+              const Gap(16.0),
               WidgetCustomExpandableTileDummy(
                 color: BaseColor.materialcolorOrange.shade300,
                 trailingColor: BaseColor.materialcolorOrange.shade500,
                 title: 'Private equity',
                 trailing: '\$8,903,000',
               ),
-              Gap(16.0),
+              const Gap(16.0),
               WidgetCustomExpandableTileDummy(
                 color: BaseColor.materialcolorGray.shade400,
                 trailingColor: BaseColor.materialcolorGray.shade600,
                 title: 'Fixed income',
                 trailing: '\$8,903,000',
               ),
-              Gap(16.0),
+              const Gap(16.0),
               WidgetCustomExpandableTileDummy(
                 color: BaseColor.materialcolorTeal.shade500,
                 trailingColor: BaseColor.materialcolorTeal.shade600,
@@ -257,7 +256,7 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              Gap(16),
+              const Gap(16),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: WidgetCustomButton(
@@ -269,7 +268,7 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                   title: 'Listed shares balances per month?',
                 ),
               ),
-              Gap(16),
+              const Gap(16),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: WidgetCustomButton(
@@ -281,7 +280,7 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                   title: 'Liquid assets per account?',
                 ),
               ),
-              Gap(16),
+              const Gap(16),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: WidgetCustomButton(
@@ -293,7 +292,7 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                   title: 'What are current portfolio risks?',
                 ),
               ),
-              Gap(60),
+              const Gap(60),
             ],
           ),
         ),

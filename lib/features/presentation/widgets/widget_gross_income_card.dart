@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:pokemon/core/util/styles/colors.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
 
 class WidgetIncomeOutlinedCard extends StatelessWidget {
   final List<Widget> children;
@@ -12,10 +12,10 @@ class WidgetIncomeOutlinedCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         border: Border.all(color: BaseColor.materialcolorGray.shade200),
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(24),
         ),
       ),

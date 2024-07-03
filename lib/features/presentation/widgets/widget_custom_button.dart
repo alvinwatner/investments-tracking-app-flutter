@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/core/util/styles/text.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
+import 'package:in_ai/core/util/styles/text.dart';
 
 class WidgetCustomButton extends StatelessWidget {
   final void Function() onPressed;
@@ -30,11 +30,11 @@ class WidgetCustomButton extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 8),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         child: Row(
           children: [
             leading,
-            Gap(10),
+            const Gap(10),
             Text(
               title,
               style: BaseTextStyle.textThemeBackup.bodyMedium?.copyWith(

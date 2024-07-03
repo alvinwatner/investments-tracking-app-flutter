@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:pokemon/core/use_cases/use_case.dart';
+import 'package:in_ai/core/use_cases/use_case.dart';
 
 import '../../../../core/error/failure.dart';
 import '../../../data/models/result/result_response.dart';

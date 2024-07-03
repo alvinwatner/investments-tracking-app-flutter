@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:dartz/dartz.dart';
-import 'package:pokemon/core/error/failure.dart';
-import 'package:pokemon/core/service/network_info.dart';
-import 'package:pokemon/features/data/data_sources/balances_remote_data_sources.dart';
-import 'package:pokemon/features/data/models/data_api_failure/data_api_failure.dart';
-import 'package:pokemon/features/data/models/result/result_response.dart';
+import 'package:in_ai/core/error/failure.dart';
+import 'package:in_ai/core/service/network_info.dart';
+import 'package:in_ai/features/data/data_sources/balances_remote_data_sources.dart';
+import 'package:in_ai/features/data/models/data_api_failure/data_api_failure.dart';
+import 'package:in_ai/features/data/models/result/result_response.dart';
 
 import '../../../domain/repositories/balances/balances_repository.dart';
 

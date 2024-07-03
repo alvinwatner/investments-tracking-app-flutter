@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/core/util/styles/text.dart';
-import 'package:pokemon/features/presentation/pages/asset_balances_page.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
+import 'package:in_ai/core/util/styles/text.dart';
+import 'package:in_ai/features/presentation/pages/asset_balances_page.dart';
 import '../widgets/widget_chip_trending.dart';
 
 class WidgetNetAssetsCard extends StatelessWidget {
@@ -14,10 +14,10 @@ class WidgetNetAssetsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         color: BaseColor.materialcolorPurple.shade700,
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(24),
         ),
       ),
@@ -39,7 +39,7 @@ class WidgetNetAssetsCard extends StatelessWidget {
               ),
             ],
           ),
-          Gap(12.0),
+          const Gap(12.0),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -54,11 +54,11 @@ class WidgetNetAssetsCard extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Gap(8.0),
+                  const Gap(8.0),
                   Row(
                     children: [
-                      WidgetChipTrendingOutlined('1.5'),
-                      Gap(10.0),
+                      const WidgetChipTrendingOutlined('1.5'),
+                      const Gap(10.0),
                       Chip(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(1234),
@@ -85,7 +85,7 @@ class WidgetNetAssetsCard extends StatelessWidget {
                   Navigator.pushNamed(context, AssetBalancesPage.routeName);
                 },
                 padding: EdgeInsets.zero,
-                icon: Icon(
+                icon: const Icon(
                   Icons.keyboard_arrow_right_rounded,
                   color: Colors.white,
                   size: 36,
@@ -93,7 +93,7 @@ class WidgetNetAssetsCard extends StatelessWidget {
               )
             ],
           ),
-          Gap(
+          const Gap(
             12.0,
           ),
           RichText(
@@ -113,7 +113,7 @@ class WidgetNetAssetsCard extends StatelessWidget {
               ],
             ),
           ),
-          Gap(12.0),
+          const Gap(12.0),
           RichText(
             text: TextSpan(
               text: 'Liabilities: ',
@@ -131,7 +131,7 @@ class WidgetNetAssetsCard extends StatelessWidget {
               ],
             ),
           ),
-          Gap(2.0),
+          const Gap(2.0),
         ],
       ),
     );

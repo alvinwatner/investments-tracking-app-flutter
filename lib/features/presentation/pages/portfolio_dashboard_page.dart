@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/core/util/styles/text.dart';
-import 'package:pokemon/features/presentation/widgets/widget_gross_income_card.dart';
-import 'package:pokemon/features/presentation/widgets/widget_net_assets_card.dart';
-import 'package:pokemon/features/presentation/widgets/widget_tab_portfolio_performance.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
+import 'package:in_ai/core/util/styles/text.dart';
+import 'package:in_ai/features/presentation/widgets/widget_gross_income_card.dart';
+import 'package:in_ai/features/presentation/widgets/widget_net_assets_card.dart';
+import 'package:in_ai/features/presentation/widgets/widget_tab_portfolio_performance.dart';
 
 import '../../../core/util/sources/images.dart';
 import '../widgets/widget_add_tab_menu.dart';
@@ -29,9 +29,9 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: WidgetAppBar(),
+      appBar: const WidgetAppBar(),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -58,19 +58,19 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                 ),
               ],
             ),
-            Gap(16.0),
+            const Gap(16.0),
             AskAIButton(
               onPressed: () {},
             ),
-            Gap(16.0),
+            const Gap(16.0),
             WidgetTabCountries(
               onSelectedIndex: (index) {},
             ),
-            Gap(16.0),
-            WidgetNetAssetsCard(),
-            Gap(16.0),
-            WidgetsAddTabMenu(),
-            Gap(16.0),
+            const Gap(16.0),
+            const WidgetNetAssetsCard(),
+            const Gap(16.0),
+            const WidgetsAddTabMenu(),
+            const Gap(16.0),
             Padding(
               padding: const EdgeInsets.only(left: 20.0),
               child: Text(
@@ -82,7 +82,7 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                 ),
               ),
             ),
-            Gap(16.0),
+            const Gap(16.0),
             WidgetTabPortfolioPerformances(
               onSelectedIndex: (int? index) {},
             ),
@@ -97,8 +97,8 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                     fontWeight: FontWeight.w800,
                   ),
                 ),
-                Gap(8),
-                WidgetChipTrending('0.5'),
+                const Gap(8),
+                const WidgetChipTrending('0.5'),
               ],
             ),
             WidgetPortfolioPerformanceItem(
@@ -111,8 +111,8 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                     fontWeight: FontWeight.w800,
                   ),
                 ),
-                Gap(8),
-                WidgetChipTrending('1.1'),
+                const Gap(8),
+                const WidgetChipTrending('1.1'),
               ],
             ),
             WidgetPortfolioPerformanceItem(
@@ -126,11 +126,11 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                     fontWeight: FontWeight.w800,
                   ),
                 ),
-                Gap(8),
-                WidgetChipTrending('4.6'),
+                const Gap(8),
+                const WidgetChipTrending('4.6'),
               ],
             ),
-            Gap(16),
+            const Gap(16),
             WidgetIncomeOutlinedCard(
               children: [
                 Row(
@@ -150,7 +150,7 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                     ),
                   ],
                 ),
-                Gap(12.0),
+                const Gap(12.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -165,7 +165,7 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Gap(8.0),
+                        const Gap(8.0),
                         Row(
                           children: [
                             Icon(
@@ -173,7 +173,7 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                               color: BaseColor.materialcolorSuccess,
                               size: 19,
                             ),
-                            Gap(2.0),
+                            const Gap(2.0),
                             Text(
                               '+4.4%',
                               style: BaseTextStyle.textThemeBackup.bodySmall
@@ -182,7 +182,7 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
-                            Gap(10.0),
+                            const Gap(10.0),
                             Text(
                               'vs last day',
                               style: BaseTextStyle.textThemeBackup.bodySmall
@@ -196,9 +196,9 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                       ],
                     ),
                     Container(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(1234)),
+                        borderRadius: const BorderRadius.all(Radius.circular(1234)),
                         color: BaseColor.materialcolorBrand.shade50,
                       ),
                       child: Icon(
@@ -209,7 +209,7 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                     )
                   ],
                 ),
-                Gap(
+                const Gap(
                   12.0,
                 ),
                 RichText(
@@ -230,7 +230,7 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                     ],
                   ),
                 ),
-                Gap(12.0),
+                const Gap(12.0),
                 RichText(
                   text: TextSpan(
                     text: 'Net income: ',
@@ -249,13 +249,13 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                     ],
                   ),
                 ),
-                Gap(14.0),
+                const Gap(14.0),
                 WidgetTimeFilterTab(
                   onTap: (int index) {},
                 ),
               ],
             ),
-            Gap(16),
+            const Gap(16),
             Text(
               'AI suggested queries',
               style: BaseTextStyle.textThemeBackup.bodyLarge?.copyWith(
@@ -263,7 +263,7 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                 fontWeight: FontWeight.w700,
               ),
             ),
-            Gap(16),
+            const Gap(16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: WidgetCustomButton(
@@ -275,7 +275,7 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                 title: 'Listed shares balances per month?',
               ),
             ),
-            Gap(16),
+            const Gap(16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: WidgetCustomButton(
@@ -287,7 +287,7 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                 title: 'Liquid assets per account?',
               ),
             ),
-            Gap(16),
+            const Gap(16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: WidgetCustomButton(
@@ -300,9 +300,9 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
               ),
             ),
 
-            Gap(16),
-            Divider(),
-            Gap(16),
+            const Gap(16),
+            const Divider(),
+            const Gap(16),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -314,7 +314,7 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                   ),
                   title: 'Customise',
                 ),
-                Gap(10),
+                const Gap(10),
                 WidgetCustomButton(
                   onPressed: () {},
                   leading: Icon(
@@ -325,7 +325,7 @@ class _PortfolioDashboardPageState extends State<PortfolioDashboardPage> {
                 ),
               ],
             ),
-            Gap(60),
+            const Gap(60),
           ],
         ),
       ),

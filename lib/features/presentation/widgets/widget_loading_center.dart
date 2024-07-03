@@ -18,7 +18,7 @@ class WidgetLoadingCenter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Platform.isIOS
-          ? CupertinoActivityIndicator()
+          ? const CupertinoActivityIndicator()
           : CircularProgressIndicator(
               value: value,
             ),

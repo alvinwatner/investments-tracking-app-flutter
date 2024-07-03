@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/features/presentation/widgets/widget_primary_button.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
+import 'package:in_ai/features/presentation/widgets/widget_primary_button.dart';
 
 /// Widget ini berfungsi untuk menampilkan keterangan proses gagal dan terdapat widget [ElevatedButton] ditengah-tengah
 /// untuk memuat ulang prosesnya.<br /><br />
@@ -12,7 +12,7 @@ class WidgetCenterTryAgain extends StatelessWidget {
   final String message;
   final Function() onPressed;
 
-  WidgetCenterTryAgain({
+  const WidgetCenterTryAgain({super.key, 
     required this.message,
     required this.onPressed,
   });
@@ -23,7 +23,7 @@ class WidgetCenterTryAgain extends StatelessWidget {
     var backgroundColorButton = BaseColor.materialcolorBlue.shade200;
     return Center(
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
@@ -38,7 +38,7 @@ class WidgetCenterTryAgain extends StatelessWidget {
                     ),
               ),
             ),
-            SizedBox(height: 4),
+            const SizedBox(height: 4),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
@@ -49,7 +49,7 @@ class WidgetCenterTryAgain extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             WidgetPrimaryButton(
               textColor: Colors.white,
               backgroundColor: backgroundColorButton,
@@ -58,11 +58,11 @@ class WidgetCenterTryAgain extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.repeat,
                     color: Colors.white,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 4,
                   ),
                   Text(

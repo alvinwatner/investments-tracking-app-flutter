@@ -1,4 +1,4 @@
-package com.example.pokemon
+package com.packform.in_ai
 
 import io.flutter.embedding.android.FlutterActivity
 

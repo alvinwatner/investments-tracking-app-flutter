@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/core/util/styles/text.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
+import 'package:in_ai/core/util/styles/text.dart';
 
 /// A base class for trending chips with common styling.
 ///
@@ -50,7 +50,7 @@ class BaseWidgetChipTrending extends StatelessWidget {
             color: iconColor,
             size: 19,
           ),
-          Gap(2.0),
+          const Gap(2.0),
           Text(
             '+$title%',
             style: BaseTextStyle.textThemeBackup.bodySmall?.copyWith(

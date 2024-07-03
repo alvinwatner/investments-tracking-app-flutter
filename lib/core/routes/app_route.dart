@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:pokemon/features/presentation/pages/asset_balances_page.dart';
-import 'package:pokemon/features/presentation/pages/portfolio_dashboard_page.dart';
+import 'package:in_ai/features/presentation/pages/asset_balances_page.dart';
+import 'package:in_ai/features/presentation/pages/portfolio_dashboard_page.dart';
 
 class AppRoute {
   static Route<dynamic> generateRoute(RouteSettings settings) {

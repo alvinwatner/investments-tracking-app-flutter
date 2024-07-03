@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:pokemon/config/flavor_config.dart';
-import 'package:pokemon/core/routes/app_route.dart';
-import 'package:pokemon/features/presentation/pages/portfolio_dashboard_page.dart';
+import 'package:in_ai/config/flavor_config.dart';
+import 'package:in_ai/core/routes/app_route.dart';
+import 'package:in_ai/features/presentation/pages/portfolio_dashboard_page.dart';
 
 final rootScaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
@@ -56,7 +56,7 @@ class _AppState extends State<App> {
             }
           },
           child: MediaQuery(
-            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
             child: child ?? Container(),
           ),
         );

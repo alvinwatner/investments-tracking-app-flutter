@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/core/util/styles/text.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
+import 'package:in_ai/core/util/styles/text.dart';
 
 class WidgetAppBar extends StatelessWidget implements PreferredSizeWidget {
   const WidgetAppBar({
@@ -34,7 +34,7 @@ class WidgetAppBar extends StatelessWidget implements PreferredSizeWidget {
           ],
         ),
       ),
-      leading: Padding(
+      leading: const Padding(
         padding: EdgeInsets.only(left: 16.0),
         child: CircleAvatar(
           backgroundImage: NetworkImage(
@@ -43,7 +43,7 @@ class WidgetAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         Padding(
-          padding: EdgeInsets.only(right: 8.0),
+          padding: const EdgeInsets.only(right: 8.0),
           child: IconButton(
             onPressed: () {},
             icon: Icon(

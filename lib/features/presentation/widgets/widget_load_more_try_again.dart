@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class WidgetLoadMoreTryAgain extends StatelessWidget {
   final Function() onTap;
 
-  WidgetLoadMoreTryAgain({required this.onTap});
+  const WidgetLoadMoreTryAgain({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +19,8 @@ class WidgetLoadMoreTryAgain extends StatelessWidget {
               'tap_to_try_again'.tr(),
               textAlign: TextAlign.center,
             ),
-            SizedBox(width: 8),
-            Icon(Icons.refresh),
+            const SizedBox(width: 8),
+            const Icon(Icons.refresh),
           ],
         ),
       ),

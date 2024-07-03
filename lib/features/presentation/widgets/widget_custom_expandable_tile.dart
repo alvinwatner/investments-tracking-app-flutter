@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/core/util/styles/text.dart';
-import 'package:pokemon/features/data/models/result/result_response.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
+import 'package:in_ai/core/util/styles/text.dart';
+import 'package:in_ai/features/data/models/result/result_response.dart';
 
 import '../../../core/util/sources/images.dart';
 
@@ -36,7 +36,7 @@ class _WidgetCustomExpandableTileState extends State<WidgetCustomExpandableTile>
     _isExpanded = widget.isExpanded;
     super.initState();
     _animationController = AnimationController(
-      duration: Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 200),
       vsync: this,
     );
     _iconTurns = Tween<double>(begin: 0.0, end: 0.5)
@@ -65,10 +65,10 @@ class _WidgetCustomExpandableTileState extends State<WidgetCustomExpandableTile>
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           decoration: BoxDecoration(
             color: widget.color,
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(1234),
             ),
           ),
@@ -92,7 +92,7 @@ class _WidgetCustomExpandableTileState extends State<WidgetCustomExpandableTile>
                   fontWeight: FontWeight.w800,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Chip(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(1234),
@@ -110,19 +110,19 @@ class _WidgetCustomExpandableTileState extends State<WidgetCustomExpandableTile>
             ],
           ),
         ),
-        Gap(10),
+        const Gap(10),
         AnimatedSize(
-          duration: Duration(milliseconds: 200),
+          duration: const Duration(milliseconds: 200),
           child: _isExpanded
               ? Column(
                   children: List.generate(
                     3,
                     (index) => _BankExpandableTile(
-                      data: widget.data.data ?? ResultData(),
+                      data: widget.data.data ?? const ResultData(),
                     ),
                   ),
                 )
-              : SizedBox(),
+              : const SizedBox(),
         ),
       ],
     );
@@ -138,7 +138,7 @@ class _BankExpandableTile extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.symmetric(vertical: 14, horizontal: 8),
+          padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 8),
           decoration: BoxDecoration(
             color: BaseColor.materialcolorGray.shade100,
             border: Border(
@@ -148,7 +148,7 @@ class _BankExpandableTile extends StatelessWidget {
           child: Row(
             children: [
               Image.asset('${BaseImages.imagePath}/nab_asset.png'),
-              Gap(2),
+              const Gap(2),
               Text(
                 data.name ?? '',
                 style: BaseTextStyle.textThemeBackup.bodyMedium?.copyWith(
@@ -156,7 +156,7 @@ class _BankExpandableTile extends StatelessWidget {
                   fontWeight: FontWeight.w900,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Text(
                 data.value ?? '',
                 style: BaseTextStyle.textThemeBackup.bodyMedium?.copyWith(
@@ -171,7 +171,7 @@ class _BankExpandableTile extends StatelessWidget {
           data.subData?.length ?? 0,
           (index) => _CustomListTile(
             isLastItem: index == data.subData?.length,
-            data: data.subData?[index] ?? ResultSubData(),
+            data: data.subData?[index] ?? const ResultSubData(),
           ),
         ),
       ],
@@ -195,7 +195,7 @@ class _CustomListTile extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             color: BaseColor.materialcolorGray.shade50,
           ),
@@ -213,7 +213,7 @@ class _CustomListTile extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Flexible(
                 flex: 5,
                 child: Row(
@@ -237,7 +237,7 @@ class _CustomListTile extends StatelessWidget {
             ],
           ),
         ),
-        if (!isLastItem) Divider(),
+        if (!isLastItem) const Divider(),
       ],
     );
   }

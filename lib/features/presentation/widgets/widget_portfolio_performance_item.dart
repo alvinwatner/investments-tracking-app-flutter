@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/core/util/styles/text.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
+import 'package:in_ai/core/util/styles/text.dart';
 
 class WidgetPortfolioPerformanceItem extends StatelessWidget {
   final String title;
@@ -38,7 +38,7 @@ class WidgetPortfolioPerformanceItem extends StatelessWidget {
               ],
             ),
           ),
-          !isLastItem ? Divider() : SizedBox.shrink(),
+          !isLastItem ? const Divider() : const SizedBox.shrink(),
         ],
       ),
     );

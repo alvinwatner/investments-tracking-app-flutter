@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:pokemon/config/flavor_config.dart';
-import 'package:pokemon/core/util/dummy_data.dart';
-import 'package:pokemon/features/data/models/result/result_response.dart';
+import 'package:in_ai/config/flavor_config.dart';
+import 'package:in_ai/core/util/dummy_data.dart';
+import 'package:in_ai/features/data/models/result/result_response.dart';
 
 abstract class BalancesRemoteDataSource {
   /// Call endpoint [BaseUrlConfig]/v2/
@@ -27,7 +27,7 @@ class BalancesRemoteDataSourceImpl implements BalancesRemoteDataSource {
   @override
   Future<ResultResponse> getBalancesInfo() async {
     Future.delayed(
-      Duration(seconds: 3),
+      const Duration(seconds: 3),
       () {},
     );
     return ResultResponse.fromJson(balancesData);

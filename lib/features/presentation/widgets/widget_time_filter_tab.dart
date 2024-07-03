@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/core/util/styles/text.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
+import 'package:in_ai/core/util/styles/text.dart';
 
 class WidgetTimeFilterTab extends StatelessWidget {
   final Function(int)? onTap;
@@ -17,9 +17,9 @@ class WidgetTimeFilterTab extends StatelessWidget {
       length: 4,
       child: Container(
         height: 50,
-        padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
+        padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(1234)),
+          borderRadius: const BorderRadius.all(Radius.circular(1234)),
           color: BaseColor.materialcolorGray.shade200,
         ),
         child: TabBar(
@@ -37,9 +37,9 @@ class WidgetTimeFilterTab extends StatelessWidget {
             horizontal: 4.0,
             vertical: 0.0,
           ),
-          padding: EdgeInsets.symmetric(horizontal: 2.0, vertical: 6.0),
+          padding: const EdgeInsets.symmetric(horizontal: 2.0, vertical: 6.0),
           indicatorSize: TabBarIndicatorSize.tab,
-          indicator: ShapeDecoration(
+          indicator: const ShapeDecoration(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(1234),
@@ -47,7 +47,7 @@ class WidgetTimeFilterTab extends StatelessWidget {
             ),
             color: Colors.white,
           ),
-          tabs: <Widget>[
+          tabs: const <Widget>[
             Tab(
               text: 'Day',
             ),

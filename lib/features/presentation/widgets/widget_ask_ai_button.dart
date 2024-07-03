@@ -16,7 +16,7 @@ class AskAIButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
+        SizedBox(
           width: double.infinity,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -27,7 +27,7 @@ class AskAIButton extends StatelessWidget {
             ),
             onPressed: onPressed,
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 13),
+              padding: const EdgeInsets.symmetric(vertical: 13),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

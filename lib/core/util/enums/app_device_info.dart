@@ -1,9 +1,9 @@
 enum AppDeviceInfo {
-  APP_NAME,
-  VERSION_NAME,
-  PACKAGE_NAME,
-  PLATFORM,
-  OS_VERSION,
-  BRAND,
-  DEVICE_ID,
+  appName,
+  versionName,
+  packageName,
+  platform,
+  osVersion,
+  brand,
+  deviceId,
 }

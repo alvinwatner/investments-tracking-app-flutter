@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pokemon/app.dart';
-import 'package:pokemon/config/base_url_config.dart';
-import 'package:pokemon/config/flavor_config.dart';
-import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/injection_container.dart' as di;
+import 'package:in_ai/app.dart';
+import 'package:in_ai/config/base_url_config.dart';
+import 'package:in_ai/config/flavor_config.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
+import 'package:in_ai/injection_container.dart' as di;
 
 void main() async {
   runZonedGuarded(() async {
@@ -22,7 +22,7 @@ void main() async {
     const baseUrlEndpoint = baseUrl;
 
     FlavorConfig(
-      flavor: Flavor.PRODUCTION,
+      flavor: Flavor.production,
       colorPrimary: BaseColor.materialcolorGray,
       colorAccent: BaseColor.materialcolorBlue,
       values: FlavorValues(

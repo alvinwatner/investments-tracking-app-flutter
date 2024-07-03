@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/core/util/styles/text.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
+import 'package:in_ai/core/util/styles/text.dart';
 
 class WidgetsAddTabMenu extends StatefulWidget {
   const WidgetsAddTabMenu({
@@ -64,7 +64,7 @@ class _CustomChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChoiceChip(
       showCheckmark: false,
-      labelPadding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 20.0),
+      labelPadding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 20.0),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(1234),
         side: BorderSide(
@@ -84,7 +84,7 @@ class _CustomChip extends StatelessWidget {
                 ? Colors.white
                 : BaseColor.materialcolorGray.shade600,
           ),
-          Gap(10),
+          const Gap(10),
           Text(
             title,
             style: BaseTextStyle.textThemeBackup.bodyMedium?.copyWith(

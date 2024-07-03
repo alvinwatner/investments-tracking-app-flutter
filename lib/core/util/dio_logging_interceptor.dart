@@ -1,5 +1,7 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
-import 'package:pokemon/config/base_url_config.dart';
+import 'package:in_ai/config/base_url_config.dart';
 
 import 'shared_preferences_manager.dart';
 
@@ -12,8 +14,9 @@ class DioLoggingInterceptor extends InterceptorsWrapper {
   var isRefreshTokenProcessing = false;
 
   @override
-  Future onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
-    print('--> ${options.method.toUpperCase()} ${options.baseUrl + options.path}');
+  Future onRequest(
+      RequestOptions options, RequestInterceptorHandler handler) async {
+    log('--> ${options.method.toUpperCase()} ${options.baseUrl + options.path}');
     // print('Headers:');
     // options.headers.forEach((k, v) => print('$k: $v'));
     // print('queryParameters:');
@@ -38,7 +41,7 @@ class DioLoggingInterceptor extends InterceptorsWrapper {
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
-    print('<-- ${response.statusCode} ${response.requestOptions.baseUrl + response.requestOptions.path}');
+    log('<-- ${response.statusCode} ${response.requestOptions.baseUrl + response.requestOptions.path}');
     // print('Headers:');
     // response.headers.forEach((k, v) => print('$k: $v'));
     // print('Response: ${response.data}');
@@ -48,8 +51,7 @@ class DioLoggingInterceptor extends InterceptorsWrapper {
 
   @override
   Future onError(DioError err, ErrorInterceptorHandler handler) async {
-    print(
-        '<-- ${err.message} ${(err.response?.requestOptions != null ? ((err.response?.requestOptions.baseUrl ?? '') + (err.response?.requestOptions.path ?? '')) : 'URL')}');
+    log('<-- ${err.message} ${(err.response?.requestOptions != null ? ((err.response?.requestOptions.baseUrl ?? '') + (err.response?.requestOptions.path ?? '')) : 'URL')}');
     // print('${err.response != null ? err.response?.data : 'Unknown Error'}');
     // print('${err.response != null ? err.response?.headers : 'Unknown Error'}');
     // print('<-- End error');
@@ -63,9 +65,11 @@ class DioLoggingInterceptor extends InterceptorsWrapper {
       return handler.resolve(response);
     }
     if (responseCode == 302) {
-      if (err.response != null && err.response!.headers.map['location'] != null) {
-        final newUrl =
-            err.response!.headers.map['location']!.isNotEmpty ? err.response!.headers.map['location']!.first : '';
+      if (err.response != null &&
+          err.response!.headers.map['location'] != null) {
+        final newUrl = err.response!.headers.map['location']!.isNotEmpty
+            ? err.response!.headers.map['location']!.first
+            : '';
         try {
           final response = await _dio.get(
             newUrl,

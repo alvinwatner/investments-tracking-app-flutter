@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 class WidgetLoadingCenterFullScreen extends StatelessWidget {
   final double opacity;
 
-  WidgetLoadingCenterFullScreen({this.opacity = 0.5});
+  const WidgetLoadingCenterFullScreen({super.key, this.opacity = 0.5});
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +26,15 @@ class WidgetLoadingCenterFullScreen extends StatelessWidget {
                   color: Colors.red,
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    CupertinoActivityIndicator(
+                    const CupertinoActivityIndicator(
                       color: Colors.red,
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
                       'loading'.tr(),
                       textAlign: TextAlign.center,
@@ -42,7 +42,7 @@ class WidgetLoadingCenterFullScreen extends StatelessWidget {
                   ],
                 ),
               )
-            : CircularProgressIndicator(),
+            : const CircularProgressIndicator(),
       ),
     );
   }

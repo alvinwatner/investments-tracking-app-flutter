@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:pokemon/core/util/constant_error_message.dart';
-import 'package:pokemon/features/data/models/data_api_failure/data_api_failure.dart';
+import 'package:in_ai/core/util/constant_error_message.dart';
+import 'package:in_ai/features/data/models/data_api_failure/data_api_failure.dart';
 
 /// Class abstrak [Failure].
 abstract class Failure extends Equatable {}

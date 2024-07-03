@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/core/util/styles/text.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
+import 'package:in_ai/core/util/styles/text.dart';
 
 import '../../../core/util/sources/images.dart';
 
@@ -38,7 +38,7 @@ class _WidgetCustomExpandableTileDummyState
     _isExpanded = widget.isExpanded;
     super.initState();
     _animationController = AnimationController(
-      duration: Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 200),
       vsync: this,
     );
     _iconTurns = Tween<double>(begin: 0.0, end: 0.5)
@@ -67,10 +67,10 @@ class _WidgetCustomExpandableTileDummyState
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           decoration: BoxDecoration(
             color: widget.color,
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(1234),
             ),
           ),
@@ -94,7 +94,7 @@ class _WidgetCustomExpandableTileDummyState
                   fontWeight: FontWeight.w800,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Chip(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(1234),
@@ -112,17 +112,17 @@ class _WidgetCustomExpandableTileDummyState
             ],
           ),
         ),
-        Gap(10),
+        const Gap(10),
         AnimatedSize(
-          duration: Duration(milliseconds: 200),
+          duration: const Duration(milliseconds: 200),
           child: _isExpanded
               ? Column(
                   children: List.generate(
                     3,
-                    (index) => _BankExpandableTile(),
+                    (index) => const _BankExpandableTile(),
                   ),
                 )
-              : SizedBox(),
+              : const SizedBox(),
         ),
       ],
     );
@@ -137,7 +137,7 @@ class _BankExpandableTile extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.symmetric(vertical: 14, horizontal: 8),
+          padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 8),
           decoration: BoxDecoration(
             color: BaseColor.materialcolorGray.shade100,
             border: Border(
@@ -147,7 +147,7 @@ class _BankExpandableTile extends StatelessWidget {
           child: Row(
             children: [
               Image.asset('${BaseImages.imagePath}/nab_asset.png'),
-              Gap(2),
+              const Gap(2),
               Text(
                 'NAB',
                 style: BaseTextStyle.textThemeBackup.bodyMedium?.copyWith(
@@ -155,7 +155,7 @@ class _BankExpandableTile extends StatelessWidget {
                   fontWeight: FontWeight.w900,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Text(
                 '\$6,747,000',
                 style: BaseTextStyle.textThemeBackup.bodyMedium?.copyWith(
@@ -189,7 +189,7 @@ class _CustomListTile extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             color: BaseColor.materialcolorGray.shade50,
           ),
@@ -207,7 +207,7 @@ class _CustomListTile extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Flexible(
                 flex: 5,
                 child: Row(
@@ -231,7 +231,7 @@ class _CustomListTile extends StatelessWidget {
             ],
           ),
         ),
-        if (!isLastItem) Divider(),
+        if (!isLastItem) const Divider(),
       ],
     );
   }

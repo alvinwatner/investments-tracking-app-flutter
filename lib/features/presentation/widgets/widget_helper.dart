@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pokemon/core/util/string_extension.dart';
-import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/features/presentation/widgets/widget_dialog.dart';
+import 'package:in_ai/core/util/string_extension.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
+import 'package:in_ai/features/presentation/widgets/widget_dialog.dart';
 
 /// Class ini berfungsi untuk melakukan utilitas-utilitas terhadap widget.<br /><br />
 class WidgetHelper {

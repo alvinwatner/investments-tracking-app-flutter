@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon/core/util/styles/colors.dart';
-import 'package:pokemon/core/util/styles/text.dart';
+import 'package:in_ai/core/util/styles/colors.dart';
+import 'package:in_ai/core/util/styles/text.dart';
 
 class WidgetAssetsTypesTab extends StatefulWidget {
   final Function(int?) onSelectedIndex;

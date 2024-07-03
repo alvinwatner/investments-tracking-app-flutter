@@ -6,7 +6,7 @@ class DataPage<T> extends Equatable {
   final String? previous;
   final List<T?>? results;
 
-  DataPage({
+  const DataPage({
     this.count,
     this.next,
     this.previous,
