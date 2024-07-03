@@ -5,7 +5,13 @@ import 'package:get_it/get_it.dart';
 import 'package:pokemon/core/service/network_info.dart';
 import 'package:pokemon/core/util/dio_logging_interceptor.dart';
 import 'package:pokemon/core/util/shared_preferences_manager.dart';
+import 'package:pokemon/features/data/data_sources/balances_remote_data_sources.dart';
+import 'package:pokemon/features/domain/repositories/balances/balances_repository.dart';
+import 'package:pokemon/features/domain/use_cases/get_balances_info/get_balances_info.dart';
+import 'package:pokemon/features/presentation/bloc/balances/balances_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'features/data/repositories/balances/balances_repository_impl.dart';
 
 final sl = GetIt.instance;
 
@@ -15,12 +21,33 @@ Future<void> init() async {
    */
 
   // Bloc
+  sl.registerFactory(
+    () => BalancesBloc(
+      getBalancesInfo: sl(),
+    ),
+  );
 
   // Remote Data Sources
+  sl.registerLazySingleton<BalancesRemoteDataSource>(
+    () => BalancesRemoteDataSourceImpl(
+      dio: sl(),
+    ),
+  );
 
   // Use case
+  sl.registerLazySingleton(
+    () => GetBalancesInfo(
+      repository: sl(),
+    ),
+  );
 
   // Repository
+  sl.registerLazySingleton<BalancesRepository>(
+    () => BalancesRepositoryImpl(
+      remoteDataSource: sl(),
+      networkInfo: sl(),
+    ),
+  );
 
   /**
    * ! Core

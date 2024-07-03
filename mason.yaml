@@ -1,0 +1,33 @@
+bricks:
+  bloc:
+    git: 
+      url : "https://github.com/alvinwatner/clean-arch-layer-first.git"    
+      path: "bricks/bloc"
+  feature:
+    git: 
+      url : "https://github.com/alvinwatner/clean-arch-layer-first.git"    
+      path: "bricks/feature"
+  feature_test:
+    git: 
+      url : "https://github.com/alvinwatner/clean-arch-layer-first.git"    
+      path: "bricks/feature_test"
+  model_response:
+    git: 
+      url : "https://github.com/alvinwatner/clean-arch-layer-first.git"    
+      path: "bricks/model_response"   
+  model_response_test:
+    git: 
+      url : "https://github.com/alvinwatner/clean-arch-layer-first.git"    
+      path: "bricks/model_response"
+  usecase:
+    git: 
+      url : "https://github.com/alvinwatner/clean-arch-layer-first.git"    
+      path: "bricks/usecase"
+  usecase_test:
+    git: 
+      url : "https://github.com/alvinwatner/clean-arch-layer-first.git"    
+      path: "bricks/usecase_test"
+  bloc_test:
+    git: 
+      url : "https://github.com/alvinwatner/clean-arch-layer-first.git"    
+      path: "bricks/bloc_test"
