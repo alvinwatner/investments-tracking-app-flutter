@@ -2,30 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:pokemon/core/util/styles/colors.dart';
 import 'package:pokemon/core/util/styles/text.dart';
-import 'package:pokemon/features/data/models/result/result_response.dart';
 
 import '../../../core/util/sources/images.dart';
 
-class WidgetCustomExpandableTile extends StatefulWidget {
-  final ResultResponse data;
+class WidgetCustomExpandableTileDummy extends StatefulWidget {
+  final String title;
+  final String trailing;
   final Color color;
   final Color trailingColor;
   final bool isExpanded;
 
-  const WidgetCustomExpandableTile({
+  const WidgetCustomExpandableTileDummy({
     super.key,
     required this.color,
-    required this.data,
+    required this.title,
+    required this.trailing,
     required this.trailingColor,
     this.isExpanded = false,
   });
 
   @override
-  State<WidgetCustomExpandableTile> createState() =>
-      _WidgetCustomExpandableTileState();
+  State<WidgetCustomExpandableTileDummy> createState() =>
+      _WidgetCustomExpandableTileDummyState();
 }
 
-class _WidgetCustomExpandableTileState extends State<WidgetCustomExpandableTile>
+class _WidgetCustomExpandableTileDummyState
+    extends State<WidgetCustomExpandableTileDummy>
     with SingleTickerProviderStateMixin {
   late bool _isExpanded;
   late AnimationController _animationController;
@@ -86,7 +88,7 @@ class _WidgetCustomExpandableTileState extends State<WidgetCustomExpandableTile>
                 ),
               ),
               Text(
-                widget.data.category ?? '',
+                widget.title,
                 style: BaseTextStyle.textThemeBackup.bodyMedium?.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
@@ -100,7 +102,7 @@ class _WidgetCustomExpandableTileState extends State<WidgetCustomExpandableTile>
                 side: BorderSide.none,
                 backgroundColor: Colors.white,
                 label: Text(
-                  widget.data.value ?? '',
+                  widget.trailing,
                   style: BaseTextStyle.textThemeBackup.bodySmall?.copyWith(
                     color: widget.trailingColor,
                     fontWeight: FontWeight.w800,
@@ -117,9 +119,7 @@ class _WidgetCustomExpandableTileState extends State<WidgetCustomExpandableTile>
               ? Column(
                   children: List.generate(
                     3,
-                    (index) => _BankExpandableTile(
-                      data: widget.data.data ?? ResultData(),
-                    ),
+                    (index) => _BankExpandableTile(),
                   ),
                 )
               : SizedBox(),
@@ -130,8 +130,7 @@ class _WidgetCustomExpandableTileState extends State<WidgetCustomExpandableTile>
 }
 
 class _BankExpandableTile extends StatelessWidget {
-  final ResultData data;
-  const _BankExpandableTile({required this.data});
+  const _BankExpandableTile();
 
   @override
   Widget build(BuildContext context) {
@@ -150,7 +149,7 @@ class _BankExpandableTile extends StatelessWidget {
               Image.asset('${BaseImages.imagePath}/nab_asset.png'),
               Gap(2),
               Text(
-                data.name ?? '',
+                'NAB',
                 style: BaseTextStyle.textThemeBackup.bodyMedium?.copyWith(
                   color: BaseColor.materialcolorGray.shade600,
                   fontWeight: FontWeight.w900,
@@ -158,7 +157,7 @@ class _BankExpandableTile extends StatelessWidget {
               ),
               Spacer(),
               Text(
-                data.value ?? '',
+                '\$6,747,000',
                 style: BaseTextStyle.textThemeBackup.bodyMedium?.copyWith(
                   color: BaseColor.materialcolorBrand.shade500,
                   fontWeight: FontWeight.w800,
@@ -168,10 +167,9 @@ class _BankExpandableTile extends StatelessWidget {
           ),
         ),
         ...List.generate(
-          data.subData?.length ?? 0,
+          10,
           (index) => _CustomListTile(
-            isLastItem: index == data.subData?.length,
-            data: data.subData?[index] ?? ResultSubData(),
+            isLastItem: index == 10,
           ),
         ),
       ],
@@ -179,14 +177,10 @@ class _BankExpandableTile extends StatelessWidget {
   }
 }
 
-// '\$6,747,000', 'NAB',
-
 class _CustomListTile extends StatelessWidget {
-  final ResultSubData data;
   final bool isLastItem;
   const _CustomListTile({
     this.isLastItem = false,
-    required this.data,
   });
 
   @override
@@ -204,7 +198,7 @@ class _CustomListTile extends StatelessWidget {
               Flexible(
                 flex: 4,
                 child: Text(
-                  data.name ?? '',
+                  'NAB',
                   style: BaseTextStyle.textThemeBackup.bodyMedium?.copyWith(
                     color: BaseColor.materialcolorGray.shade600,
                     fontWeight: FontWeight.w700,
@@ -220,7 +214,7 @@ class _CustomListTile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      data.value ?? '',
+                      '\$6,747,000',
                       style: BaseTextStyle.textThemeBackup.bodyMedium?.copyWith(
                         color: BaseColor.materialcolorBrand.shade500,
                         fontWeight: FontWeight.w800,

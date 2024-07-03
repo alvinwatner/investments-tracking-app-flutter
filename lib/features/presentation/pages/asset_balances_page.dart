@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
@@ -16,6 +18,7 @@ import '../widgets/widget_ask_ai_button.dart';
 import '../widgets/widget_assets_types_tab.dart';
 import '../widgets/widget_chip_trending.dart';
 import '../widgets/widget_custom_button.dart';
+import '../widgets/widget_custom_expandable_dummy.dart';
 import '../widgets/widget_custom_expandable_tile.dart';
 import '../widgets/widget_tab_countries.dart';
 import '../widgets/widget_time_filter_tab.dart';
@@ -194,60 +197,58 @@ class _AssetBalancesPageState extends State<AssetBalancesPage> {
                     return Column(
                       children: [
                         WidgetCustomExpandableTile(
+                          data: state.resultResponse,
                           isExpanded: true,
                           color: BaseColor.materialcolorCyan.shade500,
                           trailingColor: BaseColor.materialcolorCyan.shade500,
-                          title: 'Bank accounts',
-                          trailing: '\$8,903,000',
-                        ),
-                        Gap(16.0),
-                        WidgetCustomExpandableTile(
-                          color: BaseColor.materialcolorOrange.shade500,
-                          trailingColor: BaseColor.materialcolorOrange.shade600,
-                          title: 'Managed funds',
-                          trailing: '\$12,427,264',
-                        ),
-                        Gap(16.0),
-                        WidgetCustomExpandableTile(
-                          color: BaseColor.materialcolorWarning.shade300,
-                          trailingColor:
-                              BaseColor.materialcolorWarning.shade500,
-                          title: 'Listed shares',
-                          trailing: '\$8,903,000',
-                        ),
-                        Gap(16.0),
-                        WidgetCustomExpandableTile(
-                          color: BaseColor.materialcolorGray.shade500,
-                          trailingColor: BaseColor.materialcolorGray.shade600,
-                          title: 'Unlisted shares',
-                          trailing: '\$8,903,000',
-                        ),
-                        Gap(16.0),
-                        WidgetCustomExpandableTile(
-                          color: BaseColor.materialcolorOrange.shade300,
-                          trailingColor: BaseColor.materialcolorOrange.shade500,
-                          title: 'Private equity',
-                          trailing: '\$8,903,000',
-                        ),
-                        Gap(16.0),
-                        WidgetCustomExpandableTile(
-                          color: BaseColor.materialcolorGray.shade400,
-                          trailingColor: BaseColor.materialcolorGray.shade600,
-                          title: 'Fixed income',
-                          trailing: '\$8,903,000',
-                        ),
-                        Gap(16.0),
-                        WidgetCustomExpandableTile(
-                          color: BaseColor.materialcolorTeal.shade500,
-                          trailingColor: BaseColor.materialcolorTeal.shade600,
-                          title: 'Private property',
-                          trailing: '\$8,903,000',
                         ),
                       ],
                     );
                   }
                   return SizedBox.shrink();
                 },
+              ),
+              Gap(16.0),
+              WidgetCustomExpandableTileDummy(
+                color: BaseColor.materialcolorOrange.shade500,
+                trailingColor: BaseColor.materialcolorOrange.shade600,
+                title: 'Managed funds',
+                trailing: '\$12,427,264',
+              ),
+              Gap(16.0),
+              WidgetCustomExpandableTileDummy(
+                color: BaseColor.materialcolorWarning.shade300,
+                trailingColor: BaseColor.materialcolorWarning.shade500,
+                title: 'Listed shares',
+                trailing: '\$8,903,000',
+              ),
+              Gap(16.0),
+              WidgetCustomExpandableTileDummy(
+                color: BaseColor.materialcolorGray.shade500,
+                trailingColor: BaseColor.materialcolorGray.shade600,
+                title: 'Unlisted shares',
+                trailing: '\$8,903,000',
+              ),
+              Gap(16.0),
+              WidgetCustomExpandableTileDummy(
+                color: BaseColor.materialcolorOrange.shade300,
+                trailingColor: BaseColor.materialcolorOrange.shade500,
+                title: 'Private equity',
+                trailing: '\$8,903,000',
+              ),
+              Gap(16.0),
+              WidgetCustomExpandableTileDummy(
+                color: BaseColor.materialcolorGray.shade400,
+                trailingColor: BaseColor.materialcolorGray.shade600,
+                title: 'Fixed income',
+                trailing: '\$8,903,000',
+              ),
+              Gap(16.0),
+              WidgetCustomExpandableTileDummy(
+                color: BaseColor.materialcolorTeal.shade500,
+                trailingColor: BaseColor.materialcolorTeal.shade600,
+                title: 'Private property',
+                trailing: '\$8,903,000',
               ),
               Text(
                 'AI suggested queries',
